@@ -1,0 +1,16 @@
+CV ENGINEERING SUMMARY
+
+ENGINEERING HIGHLIGHTS
+
+Achieved 98% collective accuracy (98/100) across four comprehensive programming language curricula spanning procedural, multi-paradigm, and managed-runtime environments. Attained perfect scores of 100% in both C and C#, demonstrating deep procedural and object-oriented mastery across the full abstraction spectrum from hardware-near systems programming to enterprise-level managed development. Demonstrated verified competency in direct memory manipulation through C pointers and pointer arithmetic, object-oriented architecture principles across C++, C#, and Java, and cross-domain transfer ability enabling rapid adaptation between diverse language ecosystems. Procedural foundations subsequently leveraged in x86 Assembly, Linux kernel tasks, and AI model optimization.
+
+PROJECT IMPACT
+
+Completed and rigorously validated four foundational programming language curricula through comprehensive final assessments, achieving verified technical readiness across C, C++, C#, and Java. Developed robust competency in procedural programming and object-oriented design, providing the essential vocabulary for systems-level communication and software architecture. These competencies form a verified technical foundation supporting the primary engineering objective of mastering the intersection of software architecture and Artificial Intelligence.
+
+TECHNICAL PROFICIENCY
+
+Languages: C, C++, C#, Java
+Paradigms: Procedural programming, Object-Oriented Programming (OOP), Multi-paradigm development, Managed-runtime environments (.NET, JVM)
+Core Concepts: Pointers and direct memory addressing, pointer arithmetic, dynamic memory allocation, procedural logic and control structures, functional programming via functions and parameter passing, object-oriented design (classes, objects, inheritance, polymorphism, encapsulation, abstraction), Standard Template Library (vectors, iterators, containers), LINQ (Language Integrated Query), Java Collections Framework (List, Set, Queue, Map), exception handling, multithreading, data structures and algorithmic efficiency, file I/O, custom composite data types via structs, lambda expressions
+Platforms: .NET ecosystem, Java Virtual Machine (JVM), systems programming environments
