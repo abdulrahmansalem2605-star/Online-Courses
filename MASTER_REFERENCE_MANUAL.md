@@ -2,7 +2,7 @@
 
 > **Author:** Abdulrahman Salem  
 > **Domain:** Software Engineering | Computer Science | Artificial Intelligence | Systems Architecture  
-> **Date:** June 28, 2026  
+> **Date:** June 29, 2026  
 > **Version:** 1.0 — Unified Consolidation  
 > **Document Type:** Professional Technical Portfolio & Cross-Domain Reference
 
@@ -40,6 +40,7 @@
   - D: Complexity Analysis Reference
   - E: Bitwise Permission System Reference
   - F: Certificate Records
+  - G: Abu-Hadhoud Curriculum Source Index
 
 ---
 
@@ -582,6 +583,8 @@ C (Procedural Foundation, 100%)
 
 ## Cross-Reference Guide
 
+> **Note on Date-Time Engineering:** The `Times.h` library (2,831 lines) is covered in both Chapter 22 (algorithmic context — problem-solving applications) and Chapter 30 (systems context — library architecture and C runtime integration).
+
 | Topic | Prerequisite Volume | Application Volume |
 |-------|-------------------|-------------------|
 | Numeral Systems (Ch. 16) | Volume I | Bitwise Operations (Ch. 24), Permission Systems (Ch. 36) |
@@ -1022,29 +1025,94 @@ Card blocking (3-try PIN), quick withdraw (preset amounts), normal withdraw (mul
 
 ## Chapter 23: Debugging Infrastructure & Execution Analysis
 
+**Source:** README_Course6 — C++ Level 2, Lessons #1–#7
+
 Metacognitive tooling: breakpoints, memory value inspection, autos/watch windows, step-into/over/out navigation. Teaching the debugger before advanced language features establishes a professional-grade development mindset.
+
+**Debugging Toolkit Mastery:**
+
+| Tool | Function | Pedagogical Purpose |
+|------|----------|-------------------|
+| **Breakpoints** | Pause execution at specific lines | Isolate state at precise code locations |
+| **Memory Window** | Inspect raw memory values and addresses | Understand stack frame layout |
+| **Autos/Watch Windows** | Track variable values across execution | Observe mutation in real time |
+| **Step Into** | Enter function calls during execution | Trace call stack hierarchy |
+| **Step Over** | Execute calls without entering | Maintain abstraction boundaries |
+| **Step Out** | Exit current function to caller | Verify return value correctness |
+
+**Key Artifact:** `#2 Breakpoint & Memory Values.cpp` — demonstrates live variable mutation during debug sessions, establishing a mental model of stack frames and memory addresses well before pointers are formally introduced.
 
 ---
 
 ## Chapter 24: Bitwise Computation & Branch Architecture
 
-Ternary operator for classification; bitwise AND for masking; bitwise OR for bit-set construction. Both standard and "readable" solutions evidencing dual concern for correctness and maintainability.
+**Source:** README_Course6 — C++ Level 2, Lessons #9–#13
+
+Ternary operator for classification; bitwise AND for masking; bitwise OR for bit-set construction. Both standard and "readable" solutions evidencing dual concern for correctness and maintainability. The **Ranged Loop** lesson introduces iterator abstraction via `for (auto element : container)`.
+
+**Ternary Operator as Expression-Level Branching:**
+
+```cpp
+string Result = (Number > 0) ? "Positive" : (Number < 0) ? "Negative" : "Zero";
+```
+
+**Foundation for Permission Systems:** The bitwise AND/OR operators introduced here become the architectural foundation for the bitmask-based permission system in the capstone banking project (Ch. 22, §22.3), where eight independent permission flags are packed into a single `short` integer.
 
 ---
 
 ## Chapter 25: Function Theory & Call Semantics
 
+**Source:** README_Course6 — C++ Level 2, Lessons #14–#22
+
 Declaration vs. definition, default parameters, function overloading, call stack hierarchy, recursion with base-case termination, storage class specifiers (`static`, `auto`, `register`). Understanding **lifetime versus scope** — a concept distinguishing novice from intermediate engineers.
+
+**Code Artifact — Recursion Homework:**
+
+```cpp
+long long PowerNtoM(long long N, long long M) {
+    if (M == 0) return 1;
+    return N * PowerNtoM(N, M - 1);
+}
+```
+
+**Function Overloading — Static Polymorphism:**
+
+```cpp
+int Add(int a, int b) { return a + b; }
+double Add(double a, double b) { return a + b; }
+string Add(string a, string b) { return a + b; }
+```
+
+**Storage Class Comparison:**
+
+| Specifier | Lifetime | Scope | Use Case |
+|-----------|----------|-------|----------|
+| `auto` (default) | Block-local | Block-local | Standard local variables |
+| `static` (local) | Program duration | Block-local | Persistent state across calls |
+| `static` (global) | Program duration | Translation unit | File-scoped private symbols |
+| `register` | Block-local | Block-local | Compiler optimization hint (deprecated) |
 
 ---
 
 ## Chapter 26: Aggregate Data Structures
 
-**Two-Dimensional Arrays:** Multiplication table generator with row/column headers.
+**Source:** README_Course6 — C++ Level 2, Lessons #23–#32
 
-**`std::vector`:** Declaration, initialization, element addition/removal, vector-of-structures.
+### 26.1 Formatted I/O & Output Engineering
 
-**Vector Iteration:** `at()` vs. `operator[]`, iterator-based traversal with `typename` disambiguator.
+`printf` format specifiers for integer, float, string, and char types, alongside the `setw` manipulator, equip the student with **domain-specific I/O formatting**. The student constructs bordered tables, aligned columns, and visually structured console output — a hallmark of professional utility programming.
+
+### 26.2 Two-Dimensional Arrays
+
+Multiplication table generator with row/column headers, equation-sign borders, and hyphen separators.
+
+### 26.3 `std::vector`
+
+Declaration, initialization, element addition/removal, vector-of-structures, and all major vector functions.
+
+### 26.4 Vector Iteration & Mutability
+
+`at()` vs. `operator[]` — range-checking semantics. Iterator-based traversal with `typename` disambiguator for dependent types.
 
 ---
 
@@ -1121,7 +1189,21 @@ Doubling on overflow, halving on underutilization (25% occupancy threshold) — 
 
 ## Chapter 29: Persistent Storage & Record Management
 
-### 29.1 File I/O Mode Reference
+**Source:** README_Course6 — C++ Level 2, Lessons #49–#58
+
+### 29.1 Error Handling & Exception Safety
+
+`try`/`catch` exception handling provides runtime error recovery, alongside the `std::string` object API (`find`, `substr`, `insert`) and CCTYPE functions (`toupper`, `islower`, `ispunct`).
+
+```cpp
+try {
+    throw runtime_error("File not found");
+} catch (const runtime_error& e) {
+    cerr << "Error: " << e.what() << endl;
+}
+```
+
+### 29.2 File I/O Mode Reference
 
 | Mode | Operation | Use |
 |------|-----------|-----|
@@ -1130,7 +1212,7 @@ Doubling on overflow, halving on underutilization (25% occupancy threshold) — 
 | `ios::in` | Read only | Data loading |
 | `ios::trunc` | Truncate on open | Explicit reset |
 
-### 29.2 Load-Mutate-Persist Pattern
+### 29.3 Load-Mutate-Persist Pattern
 
 ```cpp
 void ReplaceRecord_From_File_Content_Using_Vector(string FileName) {
@@ -1146,11 +1228,54 @@ void ReplaceRecord_From_File_Content_Using_Vector(string FileName) {
 }
 ```
 
+**Lesson Progression — File I/O Construction:**
+
+| Lesson | Mode | Operation |
+|--------|------|-----------|
+| #52 | `ios::out` | Write (create/overwrite) |
+| #53 | `ios::app` | Append |
+| #54 | `ios::in` | Read & print |
+| #55 | — | Load file to vector |
+| #56 | — | Save vector to file |
+| #57 | — | Delete record via vector |
+| #58 | — | Update/replace record via vector |
+
+**Files.h Library (213 Lines, Post-Template):** `LoadDataFileToVector`, `SaveVectorToFile`, `AddDataLineToFile`, `DeleteRecord_From_FileContent_Using_Vector`, `ReplaceRecord_From_FileContent_Using_Vector`. Security practices: `fstream::is_open()` checks, `close()` calls after every operation, empty-file detection via `seekg(0, ios::end)` / `tellg()`.
+
 ---
 
 ## Chapter 30: Temporal Systems Programming
 
-The `StPeriod` domain model with associated algorithms: `IsOverlapPeriods` (interval intersection), `CountOverlapDays` (epochal arithmetic), `IsDateWithinPeriod` (membership test). Models real-world domain logic for payroll, leave management, and reservation systems.
+**Source:** README_Course6 — Lessons #59–#60; README_Course8 — Times.h
+
+### 30.1 Date-Time Foundation (`ctime` API)
+
+Uses `ctime`, `gmtime`, `localtime`, and the `tm` struct. Includes local-time display, UTC/GMT conversion, full struct-field decomposition, and `#pragma warning(disable : 4996)` with documented rationale for `_s` function alternatives.
+
+### 30.2 Complete Gregorian Calendar System (Times.h — 2,831 Lines)
+
+**Core Algorithms:**
+1. **Zeller's Congruence** — Day-of-week calculation with January/February year adjustment
+2. **Leap Year Detection** — Full Gregorian rules (400/100/4 division cascade)
+3. **Epochal Day Counting (O(1)):**
+```cpp
+unsigned CountDaysSinceEpoch(unsigned short year, unsigned short month, unsigned short day) {
+    unsigned days = 365 * (year - 1);
+    days += (year - 1) / 4;
+    days -= (year - 1) / 100;
+    days += (year - 1) / 400;
+    days += FindDayOfYear(year, month, day);
+    return days;
+}
+```
+4. **Date Arithmetic** — 10 time scales: Day → Week → Month → Year → Decade → Century → Millennium
+5. **Period Algebra** — Overlap detection (two implementations), period length, date membership, overlap-day counting
+6. **Business Date Calculations** — Weekend detection, vacation period computation with O(1) heuristics
+7. **String-to-Date Pipeline** — Multi-stage validation: slash-punctuation check → splitting → validity verification → date object construction
+8. **Format Engine** — 11 configurable date format outputs via pattern-substitution
+9. **Signed Date Difference** — Absolute and signed implementations with swap-flag technique
+
+### 30.3 The `StPeriod` Domain Model
 
 ---
 
@@ -1469,6 +1594,25 @@ AI-Augmented Development (Prompt Engineering, Vibe Coding)
 
 ---
 
+## Appendix G: Abu-Hadhoud Curriculum Source Index
+
+| Source File | Course Title | Manual Coverage |
+|-------------|-------------|-----------------|
+| `README_Course1.md` | Programming Foundations — Level 1 | Chapters 15–18 (Vol. I) |
+| `README_Course2.md` | Algorithms & Problem Solving — Level 1 | Chapter 19 (Vol. II) |
+| `README_Course3.md` | Algorithms & Problem Solving — Level 1 *(duplicate)* | Chapter 19 (Vol. II) |
+| `README_Course4.md` | Algorithms & Problem Solving — Level 1 *(alternate)* | Chapter 19 (Vol. II) |
+| `README_Course5.md` | Algorithms & Problem Solving — Level 2 | Chapter 20 (Vol. II) |
+| `README_Course6.md` | C++ Level 2 — Advanced Procedural Engineering | Chapters 23–30 (Vol. III) |
+| `README_Course7.md` | Algorithms & Problem Solving — Level 3 | Chapter 21 (Vol. II) |
+| `README_Course8.md` | Algorithms & Problem Solving — Level 4 | Chapter 22 (Vol. II) |
+| `README_Course10.md` | Object-Oriented Programming — Level 10 | Chapters 31–36 (Vol. IV) |
+| `README_Course15.md` | Foundations of Data Intelligence — Database Engineering | Chapters 37–39 (Vol. V) |
+
+**Unique Course Paths:** 7 (Foundations, Algorithms 1–4, C++ Systems, OOP, Database Engineering)
+
+---
+
 *This Master Reference Manual is a synthesized technical record consolidating four major learning paths into a unified professional portfolio. All content is derived exclusively from the original Markdown reports, course documentation, and source code artifacts. This document demonstrates a systematic progression from foundational computer science through advanced systems engineering, algorithmic mastery, web development, and AI-augmented software development.*
 
-*Filed this 28th day of June, 2026.*
+*Filed this 29th day of June, 2026.*
