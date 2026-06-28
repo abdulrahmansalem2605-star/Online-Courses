@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.clsNumber {
+    text-align: center;
+    margin: 30px;
+    font-size: 6rem;
+}
+
+.clsButtons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.clsButtons {
+    border-radius: 5px;
+    padding: 15px;
+    background-color: hsl(180, 54%, 47%);
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.clsButtons:hover {
+    background-color: hsl(180, 57%, 38%);
+}
