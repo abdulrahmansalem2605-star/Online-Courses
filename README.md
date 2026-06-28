@@ -1,9 +1,8 @@
-# Online-Courses
 # Engineering & Technical Learning Portfolio
 
 > **Author:** Abdulrahman Salem  
 > **Domain:** Software Engineering | Computer Science | Artificial Intelligence | Systems Architecture  
-> **Date:** June 28, 2026
+> **Date:** June 29, 2026
 
 ---
 
@@ -49,7 +48,7 @@ On-line/
 ├── MASTER_REFERENCE_MANUAL.md          # Unified consolidation (all paths)
 ├── README.md                           # This file
 ├── Abu-Hadhoud/
-│   └── MASTER_REFERENCE_MANUAL.md      # C++ Systems Engineering (1,818 lines)
+│   └── MASTER_REFERENCE_MANUAL.md      # C++ Systems Engineering (1,970 lines)
 ├── Solo Learn/
 │   ├── MASTER_REFERENCE_MANUAL.md      # Multi-Language Foundations (225 lines)
 │   └── README.md                       # Original learning journey notes
@@ -86,7 +85,7 @@ On-line/
 ### Part IV — C++ Systems Engineering (Abu-Hadhoud)
 - **Volume I** — Foundations: DIKW hierarchy, numeral systems, networking, operators
 - **Volume II** — Algorithms: 217+ solved problems across 4 difficulty levels
-- **Volume III** — Systems Programming: 16 template-based libraries (~9,500 lines)
+- **Volume III** — Systems Programming: Debugging toolkit, bitwise ops, function theory, 16 template-based libraries (~9,500 lines), file I/O with error handling, temporal systems
 - **Volume IV** — OOP: Banking systems, ATM systems, calculator state machine
 - **Volume V** — Database Engineering: DIKW framework, DBMS architecture
 
@@ -97,6 +96,7 @@ On-line/
 - Complexity Analysis Reference
 - Bitwise Permission System Reference
 - Certificate Records
+- Abu-Hadhoud Curriculum Source Index (10 READMEs mapped to chapters)
 
 ---
 
@@ -144,4 +144,4 @@ This is a personal academic portfolio documenting coursework and technical learn
 
 ---
 
-*Last updated: June 28, 2026*
+*Last updated: June 29, 2026*
